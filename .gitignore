@@ -1,0 +1,14 @@
+# Python environment
+dcsa/
+
+# Data (too large for GitHub; download from Kaggle)
+data/raw/
+data/clean/
+*.duckdb
+
+# Python and Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# Mac
+.DS_Store
