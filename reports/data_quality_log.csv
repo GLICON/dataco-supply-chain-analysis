@@ -1,0 +1,29 @@
+issue,columns,rows_affected,action
+Fraud and cancelled orders never shipped,"Order Status, Delivery Status",7754,Excluded from delivery analysis; Delivery Status excluded from fraud model (leakage)
+Payment type fully determines order status,"Type, Order Status",180519,Kept; noted as synthetic-data limitation
+Column not needed,Customer Email,180519,Dropped: masked (single value)
+Column not needed,Customer Password,180519,Dropped: masked (single value)
+Column not needed,Customer Fname,180519,Dropped: personal data not needed (UK GDPR data minimisation)
+Column not needed,Customer Lname,180519,Dropped: personal data not needed (UK GDPR data minimisation)
+Column not needed,Customer Street,180519,Dropped: personal data not needed (UK GDPR data minimisation)
+Column not needed,Customer Zipcode,180519,Dropped: too detailed; market and region are used
+Column not needed,Product Description,180519,Dropped: 100% empty
+Column not needed,Product Image,180519,Dropped: image URL only
+Column not needed,Product Status,180519,Dropped: single value (0)
+Column not needed,Order Zipcode,180519,Dropped: about 86% empty
+Column not needed,Latitude,180519,Dropped: too detailed; market and region are used
+Column not needed,Longitude,180519,Dropped: too detailed; market and region are used
+Column not needed,Benefit per order,180519,Dropped: duplicate of Order Profit Per Order
+Column not needed,Sales per customer,180519,Dropped: duplicate of Order Item Total
+Column not needed,Order Customer Id,180519,Dropped: duplicate of Customer Id
+Column not needed,Order Item Cardprod Id,180519,Dropped: duplicate of Product Card Id
+Column not needed,Product Category Id,180519,Dropped: duplicate of Category Id
+Column not needed,Product Price,180519,Dropped: duplicate of Order Item Product Price
+Dates stored as text,"order_date, ship_date",180519,Converted to datetime (format m/d/Y H:M)
+Date difference disagrees with days_shipping_real by 1 day,"ship_date, days_shipping_real",4657,Kept days_shipping_real as the delivery measure; the gap is a time-of-day rounding effect
+Trailing or double spaces in labels,"category_name, department_name, order_region, product_name",180519,"Stripped and collapsed whitespace (e.g. ""South of  USA "" to ""South of USA"")"
+Customer country in Spanish,customer_country,111146,"Mapped ""EE. UU."" to ""United States"""
+"Order country names in Spanish (e.g. ""Francia"")",order_country,180519,Kept as-is; analysis uses English market and order_region. Translate before building a map visual
+Negative item profit (down to -275% of revenue),"item_profit, profit_ratio",33784,"Kept: genuine losses, central to Q2; flagged later with is_loss"
+"Discount rates evenly spread (about 10,029 items each)",discount_rate,180519,Kept; noted as synthetic-data limitation affecting discount and volume conclusions
+Product range shrinks from Q4 2017 and data ends Jan 2018,"product_name, order_date",8557,Kept; calendar 2017 used as the last full year; trends after Sep 2017 treated with caution
