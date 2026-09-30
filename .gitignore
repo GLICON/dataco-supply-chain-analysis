@@ -12,3 +12,11 @@ __pycache__/
 
 # Mac
 .DS_Store
+
+# Jupyter and Anaconda temporary files
+.virtual_documents/
+anaconda_projects/
+
+# Jupyter and Anaconda temporary files
+.virtual_documents/
+anaconda_projects/
