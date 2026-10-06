@@ -1,0 +1,7 @@
+{
+  "name": "DataCo Navy",
+  "dataColors": ["#1F3864", "#2E86AB", "#F18F01", "#C73E1D", "#3B8B5A", "#8E8E8E"],
+  "background": "#FFFFFF",
+  "foreground": "#1F3864",
+  "tableAccent": "#1F3864"
+}
