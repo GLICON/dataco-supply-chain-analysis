@@ -27,3 +27,4 @@ Customer country in Spanish,customer_country,111146,"Mapped ""EE. UU."" to ""Uni
 Negative item profit (down to -275% of revenue),"item_profit, profit_ratio",33784,"Kept: genuine losses, central to Q2; flagged later with is_loss"
 "Discount rates evenly spread (about 10,029 items each)",discount_rate,180519,Kept; noted as synthetic-data limitation affecting discount and volume conclusions
 Product range shrinks from Q4 2017 and data ends Jan 2018,"product_name, order_date",8557,Kept; calendar 2017 used as the last full year; trends after Sep 2017 treated with caution
+Discount rates stored with tiny decimal errors (e.g. 0.050000001),discount_rate,180519,Rounded to 2 decimals before banding so rates sit in the correct band
